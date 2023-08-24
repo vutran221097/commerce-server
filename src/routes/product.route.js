@@ -37,7 +37,7 @@ const upload = multer({
 router.post("/create", [checkAuth, checkRole], upload.array('images', 5), [
     body('name')
         .trim()
-        .isLength({ min: 4 }),
+        .isLength({ min: 1 }),
     body('category')
         .notEmpty(),
     body('stock')
@@ -45,13 +45,13 @@ router.post("/create", [checkAuth, checkRole], upload.array('images', 5), [
         .isLength({ min: 1 }),
     body('price')
         .trim()
-        .isLength({ min: 4 }),
+        .isLength({ min: 1 }),
     body('shortDesc')
         .trim()
-        .isLength({ min: 4 }),
+        .isLength({ min: 1 }),
     body('longDesc')
         .trim()
-        .isLength({ min: 4 })
+        .isLength({ min: 1 })
 ], productController.create);
 
 router.get("/all", productController.findAll);
