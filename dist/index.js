@@ -15,7 +15,7 @@ var _index2 = _interopRequireDefault(require("./routes/index.js"));
 var _admin = require("./constants/admin.js");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const User = _index.default.user;
-const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@${process.env.MONGODB_SERVER}/commerce-web`;
+const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}${process.env.MONGODB_SERVER}`;
 const app = (0, _express.default)();
 _index.default.mongoose.connect(uri, {
   useNewUrlParser: true,
