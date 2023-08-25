@@ -5,9 +5,9 @@ import cors from 'cors'
 import socketIo from 'socket.io';
 import 'dotenv/config'
 
-import db from './src/models/index.js'
-import routes from './src/routes/index.js'
-import { adminItem } from './src/constants/admin.js';
+import db from './models/index.js'
+import routes from './routes/index.js'
+import { adminItem } from './constants/admin.js';
 
 const User = db.user;
 
