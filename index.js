@@ -11,7 +11,7 @@ import { adminItem } from './src/constants/admin.js';
 
 const User = db.user;
 
-const uri = 'mongodb://127.0.0.1:27017/commerce-web';
+const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@server.ukormm7.mongodb.net/commerce-web`;
 
 const app = express()
 
