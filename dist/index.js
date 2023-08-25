@@ -16,7 +16,7 @@ var _admin = require("./constants/admin.js");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 _dotenv.default.config();
 const User = _index.default.user;
-const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}${process.env.MONGODB_SERVER}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
 const app = (0, _express.default)();
 _index.default.mongoose.connect(uri, {
   useNewUrlParser: true,

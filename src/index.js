@@ -12,7 +12,7 @@ import { adminItem } from './constants/admin.js';
 
 const User = db.user;
 
-const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}${process.env.MONGODB_SERVER}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
 
 const app = express()
 
