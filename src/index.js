@@ -3,7 +3,8 @@ import bodyParser from 'body-parser'
 import logger from 'morgan';
 import cors from 'cors'
 import socketIo from 'socket.io';
-import 'dotenv/config'
+import dotenv from 'dotenv'
+dotenv.config()
 
 import db from './models/index.js'
 import routes from './routes/index.js'
@@ -11,7 +12,7 @@ import { adminItem } from './constants/admin.js';
 
 const User = db.user;
 
-const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}${process.env.MONGODB_SERVER}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
 
 const app = express()
 

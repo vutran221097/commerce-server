@@ -9,13 +9,14 @@ var _bodyParser = _interopRequireDefault(require("body-parser"));
 var _morgan = _interopRequireDefault(require("morgan"));
 var _cors = _interopRequireDefault(require("cors"));
 var _socket = _interopRequireDefault(require("socket.io"));
-require("dotenv/config");
+var _dotenv = _interopRequireDefault(require("dotenv"));
 var _index = _interopRequireDefault(require("./models/index.js"));
 var _index2 = _interopRequireDefault(require("./routes/index.js"));
 var _admin = require("./constants/admin.js");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+_dotenv.default.config();
 const User = _index.default.user;
-const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}${process.env.MONGODB_SERVER}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
 const app = (0, _express.default)();
 _index.default.mongoose.connect(uri, {
   useNewUrlParser: true,
