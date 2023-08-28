@@ -45,7 +45,7 @@ orderController.create = async (req, res, next) => {
                         throw error;
                     }
                     const newAmount = Number(product.stock) - Number(item.amount)
-                    await Product.findOneAndUpdate(product.id, { stock: newAmount })
+                    await Product.updateProduct(product.id, { stock: newAmount })
                 }
             }))
 
